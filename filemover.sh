@@ -7,9 +7,15 @@
 # Запросить новое расширение для файлов.
 
 # Проверка существования исходной директории
-
+if [ ! -d "$sourse_directory" ]; then
+  echo "Error: sourse directory does not exist."
+  exit 1
+fi
 # Проверка существования целевой директории
-
+if [ ! -d "$target_directory" ]; then
+  echo "Error: Target directory $target_directory does not exist. "
+  exit 1
+fi
 # Проверка, есть ли файлы с указанным расширением в исходной директории
 
 # Копирование файлов с указанным расширением в целевую директорию
