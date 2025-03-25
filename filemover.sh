@@ -7,7 +7,7 @@ read -p "Введите путь к целевой директории: " targe
 read -p "Введите расширение файлов, которые нужно скопировать (например, .txt): " file_extension
 echo "Вы выбрали расширение: $file_extension"
 # Запросить новое расширение для файлов.
-read -p "Enter new file extention with dot: " new_file_extention
+read -p "Enter new file extention with dot: " new_file_extension
 
 # Проверка существования исходной директории
 #if [ ! -d "$source_directory" ]; then
