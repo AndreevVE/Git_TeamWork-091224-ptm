@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 # Запрос исходной и целевой директории у пользователя
 
@@ -15,13 +16,11 @@
 # Копирование файлов с указанным расширением в целевую директорию
 
 
-for file in "$source_directory"/*."$file_extension"; do
-    if [ -f "$file" ]; then
-        
-        new_file_name="$(basename "$file" ."$file_extension").$new_file_extension"
-         
-        cp "$file" "$target_directory/$new_file_name"
-        
-        echo "Файл $file скопирован как $target_directory/$new_file_name"
-    fi
+for file in $files; do
+  
+  new_file="${target_directory}/$(basename "$file" "$file_extension")$new_file_extension"
+  
+  cp "$file" "$new_file"
+  
+  echo "Файл $file скопирован в $new_file"
 done
