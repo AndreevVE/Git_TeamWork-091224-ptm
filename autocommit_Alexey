@@ -1,0 +1,15 @@
+#!/bin/bash
+
+DATE=$(date)
+DIR_EXIST=$(ls -la | grep .git)
+if [ -n "$DIR_EXIST" ]; then
+  git add .
+  NO_COMMITS=$(git status | grep nothing)
+  if [ -z $NO_COMMITS ]; then
+    git commit -m "Auto_commit $DATE"
+    echo "Commit executed"
+  else
+    echo "Nothing to commit"
+  fi
+fi
+
