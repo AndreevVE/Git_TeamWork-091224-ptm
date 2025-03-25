@@ -40,3 +40,12 @@ if ! ls "$source_directory"/*"$file_extension"; then
 fi
 
 # Копирование файлов с указанным расширением в целевую директорию
+
+
+for file in "$source_directory"/*; do
+  new_file="${target_directory}/$(basename "$file" "$file_extension")$new_file_extension"
+  
+  cp "$file" "$new_file"
+  
+  echo "Файл $file скопирован в $new_file"
+done
