@@ -16,9 +16,6 @@
 
 
 for file in "$source_directory"/*; do
-+ for file in '"$source_directory"/*."$file_extension"'
-+ '[' -f '/*.' ']'
-  
   new_file="${target_directory}/$(basename "$file" "$file_extension")$new_file_extension"
   
   cp "$file" "$new_file"
